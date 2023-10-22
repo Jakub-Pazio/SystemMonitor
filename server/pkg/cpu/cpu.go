@@ -48,7 +48,7 @@ func (c *CpuTracker) updateUsage() {
 	defer c.mu.Unlock()
 
 	c.prev = c.curr
-	cpuInfo, err := GetCpuInfo()
+	cpuInfo, err := getCpuInfo()
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -69,7 +69,7 @@ func (c *CpuTracker) GetCpuPercentUsage() float64 {
 	return c.cpuPercentUsage()
 }
 
-func GetCpuInfo() (CpuInfo, error) {
+func getCpuInfo() (CpuInfo, error) {
 	data, err := os.ReadFile("/proc/stat")
 	if err != nil {
 		return CpuInfo{}, err

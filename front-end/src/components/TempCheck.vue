@@ -1,41 +1,41 @@
 <template>
     <div>
-      <h2>CPU Usage</h2>
-      <p :class="{ hot: isHot }">Usage: {{ usage.toFixed(2) }}%</p>
+        <h2>Temp Check</h2>
+        <p :class=" { hot: isHot }">Cpu temperature: {{ temp / 1000 }}</p>
     </div>
-  </template>
+</template>
 
-  <script setup lang="ts">
+<script setup lang="ts">
   import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-  const usage = ref(0);
+  const temp = ref(0);
   const isHot = ref(false);
 
-  async function getCpuUsage() {
+  async function getTemp() {
     try {
-      const res = await fetch('/cpu');
+      const res = await fetch('/temp');
       const data = await res.json();
-
-      if (data && data.name === 'cpu' && typeof data.value === 'number') {
-        usage.value = (data.value * 100); // Update usage with the value as a percentage
-        if (data.value > 0.7) {
+      console.log(data);
+      if (data && data.name === 'temp' && typeof data.value === 'number') {
+        if (data.value > 50000) {
           isHot.value = true;
         } else {
           isHot.value = false;
         }
+        temp.value = (data.value); // Update usage with the value as a percentage
       } else {
         console.error('Invalid data format received from the API.');
-        usage.value = 0; // Return a default value
+        temp.value = 0; // Return a default value
       }
     } catch (error) {
       console.error('Error fetching CPU usage:', error);
-      usage.value = 0; // Return a default value in case of an error
+      temp.value = 0; // Return a default value in case of an error
     }
   }
 
   onMounted(() => {
     // Call getCpuUsage every second
-    const updateInterval = setInterval(getCpuUsage, 1000);
+    const updateInterval = setInterval(getTemp, 1000);
 
     // Stop the interval when the component is unmounted (cleanup)
     onBeforeUnmount(() => {
@@ -44,8 +44,8 @@
   });
   </script>
 
-  <style scoped>
+<style scoped>
   .hot {
     color: red;
   }
-  </style>
+</style>
