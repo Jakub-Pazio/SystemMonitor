@@ -1,4 +1,4 @@
-module pong
+module gonitor
 
 go 1.21.1
 
