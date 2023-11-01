@@ -1,7 +1,7 @@
 <template>
     <div class="stack-container">
       <div v-for="n in intUsage" class="fixed-size-box" :key="n">
-        <div class="cpu-stack"></div>
+        <div class="cpu-stack" :id="'box' + n"></div>
       </div>
     </div>
 </template>
@@ -41,8 +41,18 @@ const intUsage = computed(() => {
 .cpu-stack {
   width: 100%;
   height: 20px; /* Set a fixed height for the CPU stack divs */
-  background-color: #3498db; /* Background color for the CPU stacks */
-  border: 1px solid #2980b9; /* Border for the CPU stacks */
   border-radius: 3px; /* Add some border radius for rounded corners */
+  background-color: #d04708;
+  border-color: #d04708;
 }
+
+#box1 {
+  background-color: #00ff00;
+  border-color: #00ff00;
+}
+#box2 {
+  background-color: #c4ca29;
+  border-color: #c4ca29;
+}
+
 </style>
