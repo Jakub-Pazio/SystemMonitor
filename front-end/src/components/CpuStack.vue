@@ -47,12 +47,58 @@ const intUsage = computed(() => {
 }
 
 #box1 {
-  background-color: #00ff00;
-  border-color: #00ff00;
+  background-color: white;
+  border-color: white;
 }
+
 #box2 {
-  background-color: #c4ca29;
-  border-color: #c4ca29;
+  background-color: #ffcccc; /* Very light red */
+  border-color: #ffcccc;
+}
+
+#box3 {
+  background-color: #ff9999; /* Light red */
+  border-color: #ff9999;
+}
+
+#box4 {
+  background-color: #ff6666; /* Red */
+  border-color: #ff6666;
+}
+
+#box5 {
+  background-color: #ff3333; /* Slightly darker red */
+  border-color: #ff3333;
+}
+
+#box6 {
+  background-color: #ff0000; /* Strong red */
+  border-color: #ff0000;
+}
+
+#box7 {
+  background-color: #ff0000; /* Strong red */
+  border-color: #ff0000;
+}
+
+#box8 {
+  background-color: #ff0000; /* Strong red */
+  border-color: #ff0000;
+}
+
+#box9 {
+  background-color: #ff0000; /* Strong red */
+  border-color: #ff0000;
+}
+
+#box10 {
+  background-color: #ff0000; /* Strong red */
+  border-color: #ff0000;
+}
+
+#box11 {
+  background-color: #ff0000; /* Strong red */
+  border-color: #ff0000;
 }
 
 </style>
