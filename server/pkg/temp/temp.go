@@ -71,7 +71,7 @@ func getTempInfo() (TempInfo, error) {
 	//TODO: read all files not just two
 	for i := 0; i < 8; i++ {
 		path := filepath.Join("/sys/class/thermal/thermal_zone" + strconv.Itoa(i), "temp")
-		log.Println(path)
+		//log.Println(path)
 		file, err := os.ReadFile(path)
 		if err != nil {
 			return TempInfo{}, err
@@ -82,7 +82,7 @@ func getTempInfo() (TempInfo, error) {
 			log.Println(err)
 			return TempInfo{}, err
 		}
-		log.Println(file)
+		//log.Println(file)
 		array = append(array, temp)
 	}
 	return TempInfo{array}, nil

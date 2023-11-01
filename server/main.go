@@ -3,6 +3,7 @@ package main
 import (
 	"gonitor/pkg/cpu"
 	"gonitor/pkg/temp"
+	"gonitor/pkg/mem"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -22,6 +23,10 @@ func main() {
 	trackerTemp := temp.TempTracker{}
 	go trackerTemp.StartTracking()
 
+	//Initialize Mem tracker
+	trackerMem := mem.MemTracker{}
+	go trackerMem.StartTracking()
+
 	e.GET("/cpu", func(c echo.Context) error {
 		e.Logger.Infof("call to /cpu endpoint: %v", c.ParamValues())
 		name := "cpu"
@@ -36,5 +41,12 @@ func main() {
 		rs := &temp.ResponseStat{Name: name, Value: result}
 		return c.JSON(http.StatusOK, rs)
 	})
-	e.Logger.Fatal(e.Start(":1323"))
+	e.GET("/mem", func(c echo.Context) error {
+		e.Logger.Infof("call to /mem endpoint: %v", c.ParamValues())
+		name := "mem"
+		result := trackerMem.GetMemInfo()
+		rs := &mem.ResponseStat{Name: name, Total: result.Total, Free: result.Free, Avail: result.Avail}
+		return c.JSON(http.StatusOK, rs)
+	})
+		e.Logger.Fatal(e.Start(":1323"))
 }
