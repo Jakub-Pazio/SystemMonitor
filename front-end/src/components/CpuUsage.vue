@@ -2,11 +2,13 @@
     <div>
       <h2>CPU Usage</h2>
       <p :class="{ hot: isHot }">Usage: {{ usage.toFixed(2) }}%</p>
+      <CpuStack :usage="usage" />
     </div>
   </template>
 
   <script setup lang="ts">
   import { ref, onMounted, onBeforeUnmount } from 'vue';
+  import CpuStack from './CpuStack.vue';
 
   const usage = ref(0);
   const isHot = ref(false);

@@ -2,6 +2,7 @@
 import CpuUsage from './components/CpuUsage.vue';
 import TempCheck from './components/TempCheck.vue';
 
+
 </script>
 
 <template>
