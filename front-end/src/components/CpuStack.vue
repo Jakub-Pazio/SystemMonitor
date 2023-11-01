@@ -15,7 +15,7 @@ const usage = defineProps({
 
 const intUsage = computed(() => {
     if (usage && usage.usage !== undefined) {
-        const val = Math.round(usage.usage / 10) + 1;
+        const val = Math.floor(usage.usage / 10) + 1;
         console.log(val);
         return val;
     }
