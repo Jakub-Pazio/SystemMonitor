@@ -6,7 +6,7 @@ import MemUsage from './components/MemUsage.vue';
 
 <template>
   <div class="app-container">
-    <h1>PC Monitor alfa</h1>
+    <h1>GoNitor 0.0.1</h1>
     <div class="left-panel">
       <CpuUsage />
       <TempCheck />

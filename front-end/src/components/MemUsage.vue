@@ -1,4 +1,5 @@
 <template>
+    <h2>Memory</h2>
     <div class="outer">
         <Pie :data="chartData" :options="chartOptions"/>
     </div>
