@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>Temp Check</h2>
-        <p :class=" { hot: isHot }">Cpu temperature: {{ temp / 1000 }}</p>
+        <p :class=" { hot: isHot }">CPU temperature: {{ temp / 1000 }}</p>
     </div>
 </template>
 
