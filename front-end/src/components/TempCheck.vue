@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="outer">
         <h2>Temp Check</h2>
         <p :class=" { hot: isHot }">CPU temperature: {{ temp / 1000 }}</p>
     </div>
@@ -47,5 +47,9 @@
 <style scoped>
   .hot {
     color: red;
+  }
+
+  .outer {
+    padding-top: 10px;
   }
 </style>
