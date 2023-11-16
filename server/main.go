@@ -2,8 +2,8 @@ package main
 
 import (
 	"gonitor/pkg/cpu"
-	"gonitor/pkg/temp"
 	"gonitor/pkg/mem"
+	"gonitor/pkg/temp"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -48,5 +48,5 @@ func main() {
 		rs := &mem.ResponseStat{Name: name, Total: result.Total, Free: result.Free, Avail: result.Avail}
 		return c.JSON(http.StatusOK, rs)
 	})
-		e.Logger.Fatal(e.Start(":1323"))
+	e.Logger.Fatal(e.Start(":1323"))
 }

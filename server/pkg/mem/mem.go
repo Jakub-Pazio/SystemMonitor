@@ -9,15 +9,15 @@ import (
 )
 
 type ResponseStat struct {
-	Name  string  `json:"name"`
-	Total int `json:"total"`
-	Free int `json:"free"`
-	Avail int `json:"avail"`
+	Name  string `json:"name"`
+	Total int    `json:"total"`
+	Free  int    `json:"free"`
+	Avail int    `json:"avail"`
 }
 
 type MemInfo struct {
 	Total int
-	Free int
+	Free  int
 	Avail int
 }
 

@@ -7,7 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
+front-end/node_modules
 .DS_Store
 dist
 dist-ssr
@@ -21,6 +21,7 @@ coverage
 .vscode/*
 !.vscode/extensions.json
 .idea
+.idea/*
 *.suo
 *.ntvs*
 *.njsproj

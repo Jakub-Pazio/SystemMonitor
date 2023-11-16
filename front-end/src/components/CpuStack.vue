@@ -1,27 +1,27 @@
 <template>
-    <div class="stack-container">
-      <div v-for="n in intUsage" class="fixed-size-box" :key="n">
-        <div class="cpu-stack" :id="'box' + n"></div>
-      </div>
+  <div class="stack-container">
+    <div v-for="n in intUsage" class="fixed-size-box" :key="n">
+      <div class="cpu-stack" :id="'box' + n"></div>
     </div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import {computed} from 'vue';
 
 const usage = defineProps({
-    usage: Number
+  usage: Number
 });
 
 const intUsage = computed(() => {
-    if (usage && usage.usage !== undefined) {
-        const val = Math.floor(usage.usage / 10) + 1;
-        console.log(val);
-        return val;
-    }
-    // Handle the case where usage.usage is undefined, e.g., return a default value or throw an error.
-    // You can replace the following line with your desired behavior.
-    return 0; // Return 0 as a default value, for example.
+  if (usage && usage.usage !== undefined) {
+    const val = Math.floor(usage.usage / 10) + 1;
+    console.log(val);
+    return val;
+  }
+  // Handle the case where usage.usage is undefined, e.g., return a default value or throw an error.
+  // You can replace the following line with your desired behavior.
+  return 0; // Return 0 as a default value, for example.
 });
 </script>
 

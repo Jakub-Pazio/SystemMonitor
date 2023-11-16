@@ -8,11 +8,11 @@ import MemUsage from './components/MemUsage.vue';
   <div class="app-container">
     <h1>GoNitor 0.0.1</h1>
     <div class="left-panel">
-      <CpuUsage />
-      <TempCheck />
+      <CpuUsage/>
+      <TempCheck/>
     </div>
     <div class="right-panel">
-      <MemUsage />
+      <MemUsage/>
     </div>
   </div>
 </template>

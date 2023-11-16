@@ -11,8 +11,8 @@ import (
 )
 
 type ResponseStat struct {
-	Name  string  `json:"name"`
-	Value int `json:"value"`
+	Name  string `json:"name"`
+	Value int    `json:"value"`
 }
 
 type TempInfo struct {
@@ -70,7 +70,7 @@ func getTempInfo() (TempInfo, error) {
 	array := []int{}
 	//TODO: read all files not just two
 	for i := 0; i < 8; i++ {
-		path := filepath.Join("/sys/class/thermal/thermal_zone" + strconv.Itoa(i), "temp")
+		path := filepath.Join("/sys/class/thermal/thermal_zone"+strconv.Itoa(i), "temp")
 		//log.Println(path)
 		file, err := os.ReadFile(path)
 		if err != nil {
