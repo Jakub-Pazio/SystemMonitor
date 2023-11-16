@@ -29,7 +29,7 @@ const intUsage = computed(() => {
 .stack-container {
   display: flex;
   flex-direction: column-reverse;
-  align-items: left;
+  align-items: flex-start;
   height: 400px; /* Set a fixed height for the container */
 }
 
